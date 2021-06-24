@@ -1,4 +1,4 @@
-const productData = [
+const productData = [<br>
     {
         productId: 1000,
         productName: 'Product 1000'
