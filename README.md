@@ -87,5 +87,5 @@ Tulis fungsi yang mengembalikan hasil seperti di atas dengan ketentuan:
 4. Tambahkan 1 paragraf penjelasan mengenai solusi yang dipilih, seperti alasan, analisa, keuntungan, kerugian
 
 Cara menjalankan:
-1. Buka browser
+1. tarik index.html ke browser
 2. klik kanan, pilih inspect lalu buka tab console
