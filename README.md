@@ -89,3 +89,40 @@ Tulis fungsi yang mengembalikan hasil seperti di atas dengan ketentuan:
 Cara menjalankan:
 1. tarik index.html ke browser
 2. klik kanan, pilih inspect lalu buka tab console
+
+Hasil berikut:
+
+const result = [
+    {
+        productName: 'Product 1000',
+        stock: {
+            total: 29,
+            detail: [
+                {
+                    locationName: 'Location 1',
+                    stock: 21
+                },
+                {
+                    locationName: 'Location 2',
+                    stock: 8
+                }
+            ]
+        }
+    },
+    {
+        productName: 'Product 1001',
+        stock: {
+            total: 14,
+            detail: [
+                {
+                    locationName: 'Location 1',
+                    stock: 4
+                },
+                {
+                    locationName: 'Location 2',
+                    stock: 10
+                }
+            ]
+        }
+    }
+];
