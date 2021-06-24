@@ -1,115 +1,118 @@
 <!DOCTYPE html>
 <html>
-<body>
-<script>
+    <head>
+        <title>Javascript</title>
+    </head>
+    <body>
+        <script>
 
-// Data Product
-const productData = [
-    {
-        productId: 1000,
-        productName: 'Product 1000'
-    },
-    {
-        productId: 1001,
-        productName: 'Product 1001'
-    }
-];
-
-// Data Stock
-const stockData = [
-    {
-        productId: 1000,
-        locationId: 1,
-        stock: 21
-    },
-    {
-        productId: 1000,
-        locationId: 2,
-        stock: 8
-    },
-    {
-        productId: 1001,
-        locationId: 1,
-        stock: 4
-    },
-    {
-        productId: 1001,
-        locationId: 2,
-        stock: 10
-    }
-];
-
-// Data Location
-const locationData = [
-    {
-        locationId: 1,
-        locationName: 'Location 1'
-    },
-    {
-        locationId: 2,
-        locationName: 'Location 2'
-    }
-];
-
-// membuat fungsi
-function mergeObj(productDataList, stockDataList, locationDataList) {
-    // variable
-    let result = [];
-
-    // looping data array
-    productDataList.forEach(pd => {
-        // variable
-        let product = {
-            productName: pd.productName,
-            stock: {
-                total: 0,
-                detail: []
+        // Data Product
+        const productData = [
+            {
+                productId: 1000,
+                productName: 'Product 1000'
+            },
+            {
+                productId: 1001,
+                productName: 'Product 1001'
             }
-        };
+        ];
 
-        // filter productId
-        let stockList = stockDataList.filter(sd => sd.productId === pd.productId);
+        // Data Stock
+        const stockData = [
+            {
+                productId: 1000,
+                locationId: 1,
+                stock: 21
+            },
+            {
+                productId: 1000,
+                locationId: 2,
+                stock: 8
+            },
+            {
+                productId: 1001,
+                locationId: 1,
+                stock: 4
+            },
+            {
+                productId: 1001,
+                locationId: 2,
+                stock: 10
+            }
+        ];
 
-        // stock lebih dari 0
-        if (stockList.length > 0) {
+        // Data Location
+        const locationData = [
+            {
+                locationId: 1,
+                locationName: 'Location 1'
+            },
+            {
+                locationId: 2,
+                locationName: 'Location 2'
+            }
+        ];
+
+        // membuat fungsi
+        function mergeObj(productDataList, stockDataList, locationDataList) {
+            // variable
+            let result = [];
 
             // looping data array
-            stockList.forEach(sl => {
-
-                // find locationId
-                let location = locationDataList.find(ld => ld.locationId === sl.locationId);
-
-                // Kondisi location
-                if (location) {
-
-                    // variable
-                    let detail = {
-                        locationName: location.locationName,
-                        stock: sl.stock
+            productDataList.forEach(pd => {
+                // variable
+                let product = {
+                    productName: pd.productName,
+                    stock: {
+                        total: 0,
+                        detail: []
                     }
+                };
 
-                    // total stock per product
-                    product.stock.total += sl.stock;
+                // filter productId
+                let stockList = stockDataList.filter(sd => sd.productId === pd.productId);
 
-                    // menambahkan elemen
-                    product.stock.detail.push(detail);
-                } else {
-                    // jika location tidak ditemukan
-                    console.error('Lokasi tidak ditemukan untuk data stok');
+                // stock lebih dari 0
+                if (stockList.length > 0) {
+
+                    // looping data array
+                    stockList.forEach(sl => {
+
+                        // find locationId
+                        let location = locationDataList.find(ld => ld.locationId === sl.locationId);
+
+                        // Kondisi location
+                        if (location) {
+
+                            // variable
+                            let detail = {
+                                locationName: location.locationName,
+                                stock: sl.stock
+                            }
+
+                            // total stock per product
+                            product.stock.total += sl.stock;
+
+                            // menambahkan elemen
+                            product.stock.detail.push(detail);
+                        } else {
+                            // jika location tidak ditemukan
+                            console.error('Lokasi tidak ditemukan untuk data stok');
+                        }
+                    })
                 }
-            })
+
+                // menambahkan elemen
+                result.push(product);
+            });
+
+            // hasil
+            return result;
         }
 
-        // menambahkan elemen
-        result.push(product);
-    });
-
-    // hasil
-    return result;
-}
-
-// hasil output memanggil fungsi
-console.log('Object merged: ', mergeObj(productData, stockData, locationData));
-</script>
-</body>
+        // hasil output memanggil fungsi
+        console.log('Object merged: ', mergeObj(productData, stockData, locationData));
+        </script>
+    </body>
 </html>
