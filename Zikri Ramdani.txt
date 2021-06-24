@@ -85,11 +85,17 @@ Tulis fungsi yang mengembalikan hasil seperti di atas dengan ketentuan:
 4. Tambahkan 1 paragraf penjelasan mengenai solusi yang dipilih, seperti alasan, analisa, keuntungan, kerugian
 
 ================================================================================================================================
-1. JavaScript
-2.
+
+# JavaScript
+
+// membuat fungsi
 function mergeObj(productDataList, stockDataList, locationDataList) {
+    // data array
     let result = [];
+
+    // looping data array
     productDataList.forEach(pd => {
+        // variable
         let product = {
             productName: pd.productName,
             stock: {
@@ -97,28 +103,46 @@ function mergeObj(productDataList, stockDataList, locationDataList) {
                 detail: []
             }
         };
+
+        // filter productId per productId
         let stockList = stockDataList.filter(sd => sd.productId === pd.productId);
+
+        // stock lebih dari 0
         if (stockList.length > 0) {
+
+            // looping data array
             stockList.forEach(sl => {
+
+                // find locationId
                 let location = locationDataList.find(ld => ld.locationId === sl.locationId);
+
                 if (location) {
+
+                    // variable
                     let detail = {
                         locationName: location.locationName,
                         stock: sl.stock
                     }
+
+                    // total stock per product
                     product.stock.total += sl.stock;
+
+                    // menambahkan elemen array
                     product.stock.detail.push(detail);
                 } else {
-                    console.error('Location not found for stock data');
+                    // jika location tidak ditemukan
+                    console.error('Lokasi tidak ditemukan untuk data stok'');
                 }
             })
         }
 
+        // menambahkan elemen array
         result.push(product);
     });
+
+    // hasil
     return result;
 }
 
+// memanggil fungsi
 console.log('Object merged: ', mergeObj(productData, stockData, locationData));
-
-3.
