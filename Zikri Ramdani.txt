@@ -116,6 +116,7 @@ function mergeObj(productDataList, stockDataList, locationDataList) {
                 // find locationId
                 let location = locationDataList.find(ld => ld.locationId === sl.locationId);
 
+                // Kondisi location
                 if (location) {
 
                     // variable
