@@ -67,7 +67,7 @@ function mergeObj(productDataList, stockDataList, locationDataList) {
             }
         };
 
-        // filter productId per productId
+        // filter productId
         let stockList = stockDataList.filter(sd => sd.productId === pd.productId);
 
         // stock lebih dari 0
@@ -90,7 +90,7 @@ function mergeObj(productDataList, stockDataList, locationDataList) {
                     // total stock per product
                     product.stock.total += sl.stock;
 
-                    // menambahkan elemen array
+                    // menambahkan elemen
                     product.stock.detail.push(detail);
                 } else {
                     // jika location tidak ditemukan
@@ -99,7 +99,7 @@ function mergeObj(productDataList, stockDataList, locationDataList) {
             })
         }
 
-        // menambahkan elemen array
+        // menambahkan elemen
         result.push(product);
     });
 
