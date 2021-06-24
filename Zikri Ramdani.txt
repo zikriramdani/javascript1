@@ -83,3 +83,42 @@ Tulis fungsi yang mengembalikan hasil seperti di atas dengan ketentuan:
 2. Algoritma efisien dan dapat digunakan untuk data yang besar (scalable)
 3. Minimalisasi penggunaan built-in functions
 4. Tambahkan 1 paragraf penjelasan mengenai solusi yang dipilih, seperti alasan, analisa, keuntungan, kerugian
+
+================================================================================================================================
+1. JavaScript
+2.
+function mergeObj(productDataList, stockDataList, locationDataList) {
+    let result = [];
+    productDataList.forEach(pd => {
+        let product = {
+            productName: pd.productName,
+            stock: {
+                total: 0,
+                detail: []
+            }
+        };
+        let stockList = stockDataList.filter(sd => sd.productId === pd.productId);
+        if (stockList.length > 0) {
+            stockList.forEach(sl => {
+                let location = locationDataList.find(ld => ld.locationId === sl.locationId);
+                if (location) {
+                    let detail = {
+                        locationName: location.locationName,
+                        stock: sl.stock
+                    }
+                    product.stock.total += sl.stock;
+                    product.stock.detail.push(detail);
+                } else {
+                    console.error('Location not found for stock data');
+                }
+            })
+        }
+
+        result.push(product);
+    });
+    return result;
+}
+
+console.log('Object merged: ', mergeObj(productData, stockData, locationData));
+
+3.
