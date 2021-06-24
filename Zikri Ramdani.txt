@@ -131,7 +131,7 @@ function mergeObj(productDataList, stockDataList, locationDataList) {
                     product.stock.detail.push(detail);
                 } else {
                     // jika location tidak ditemukan
-                    console.error('Lokasi tidak ditemukan untuk data stok'');
+                    console.error('Lokasi tidak ditemukan untuk data stok');
                 }
             })
         }
@@ -144,5 +144,5 @@ function mergeObj(productDataList, stockDataList, locationDataList) {
     return result;
 }
 
-// memanggil fungsi
+// hasil output memanggil fungsi
 console.log('Object merged: ', mergeObj(productData, stockData, locationData));
