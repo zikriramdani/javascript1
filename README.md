@@ -85,3 +85,7 @@ Tulis fungsi yang mengembalikan hasil seperti di atas dengan ketentuan:
 2. Algoritma efisien dan dapat digunakan untuk data yang besar (scalable)
 3. Minimalisasi penggunaan built-in functions
 4. Tambahkan 1 paragraf penjelasan mengenai solusi yang dipilih, seperti alasan, analisa, keuntungan, kerugian
+
+Cara menjalankan:
+1. Buka browser
+2. klik kanan, pilih inspect lalu buka tab console
