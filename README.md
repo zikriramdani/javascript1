@@ -80,17 +80,17 @@ const result = [
     }
 ];
 
-Tulis fungsi yang mengembalikan hasil seperti di atas dengan ketentuan:
+# Tulis fungsi yang mengembalikan hasil seperti di atas dengan ketentuan:
 1. Gunakan bahasa pemrograman JavaScript, Python, PHP, atau pseudo-code
 2. Algoritma efisien dan dapat digunakan untuk data yang besar (scalable)
 3. Minimalisasi penggunaan built-in functions
 4. Tambahkan 1 paragraf penjelasan mengenai solusi yang dipilih, seperti alasan, analisa, keuntungan, kerugian
 
-Cara menjalankan:
+# Cara menjalankan:
 1. tarik index.html ke browser
 2. klik kanan, pilih inspect lalu buka tab console
 
-Hasil berikut:
+# Hasil berikut:
 
 const result = [
     {
