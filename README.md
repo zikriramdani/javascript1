@@ -1,83 +1,83 @@
 ## https://zikriramdani.github.io/javascript1/
 
-const productData = [<br>
-    {<br>
-        productId: 1000,<br>
-        productName: 'Product 1000'<br>
-    },<br>
-    {<br>
-        productId: 1001,<br>
-        productName: 'Product 1001'<br>
-    }<br>
-];<br><br>
-const stockData = [<br>
-    {<br>
-        productId: 1000,<br>
-        locationId: 1,<br>
-        stock: 21<br>
-    },<br>
-    {<br>
-        productId: 1000,<br>
-        locationId: 2,<br>
-        stock: 8<br>
-    },<br>
-    {<br>
-        productId: 1001,<br>
-        locationId: 1,<br>
-        stock: 4<br>
-    },<br>
-    {<br>
-        productId: 1001,<br>
-        locationId: 2,<br>
-        stock: 10<br>
-    }<br>
-];<br><br>
-const locationData = [<br>
-    {<br>
-        locationId: 1,<br>
-        locationName: 'Location 1'<br>
-    },<br>
-    {<br>
-        locationId: 2,<br>
-        locationName: 'Location 2'<br>
-    }<br>
-];<br><br>
+const productData = [
+    {
+        productId: 1000,
+        productName: 'Product 1000'
+    },
+    {
+        productId: 1001,
+        productName: 'Product 1001'
+    }
+];
+const stockData = [
+    {
+        productId: 1000,
+        locationId: 1,
+        stock: 21
+    },
+    {
+        productId: 1000,
+        locationId: 2,
+        stock: 8
+    },
+    {
+        productId: 1001,
+        locationId: 1,
+        stock: 4
+    },
+    {
+        productId: 1001,
+        locationId: 2,
+        stock: 10
+    }
+];
+const locationData = [
+    {
+        locationId: 1,
+        locationName: 'Location 1'
+    },
+    {
+        locationId: 2,
+        locationName: 'Location 2'
+    }
+];
 
 Diinginkan hasil berikut:
 
-const result = [<br>
-    {<br>
-        productName: 'Product 1000',<br>
-        stock: {<br>
-            total: 29,<br>
-            detail: [<br>
-                {<br>
-                    locationName: 'Location 1',<br>
-                    stock: 21<br>
-                },<br>
-                {<br>
-                    locationName: 'Location 2',<br>
-                    stock: 8<br>
-                }<br>
-            ]<br>
-        }<br>
-    },<br>
-    {<br>
-        productName: 'Product 1001',<br>
-        stock: {<br>
-            total: 14,<br>
-            detail: [<br>
-                {<br>
-                    locationName: 'Location 1',<br>
-                    stock: 4<br>
-                },<br>
-                {<br>
-                    locationName: 'Location 2',<br>
-                    stock: 10<br>
-                }<br>
-            ]<br>
-        }<br>
-    }<br>
+const result = [
+    {
+        productName: 'Product 1000',
+        stock: {
+            total: 29,
+            detail: [
+                {
+                    locationName: 'Location 1',
+                    stock: 21
+                },
+                {
+                    locationName: 'Location 2',
+                    stock: 8
+                }
+            ]
+        }
+    },
+    {
+        productName: 'Product 1001',
+        stock: {
+            total: 14,
+            detail: [
+                {
+                    locationName: 'Location 1',
+                    stock: 4
+                },
+                {
+                    locationName: 'Location 2',
+                    stock: 10
+                }
+            ]
+        }
+    }
 ];
 
 Tulis fungsi yang mengembalikan hasil seperti di atas dengan ketentuan:
